@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Registration</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f2027;
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(0, 255, 255, 0.2) 1px, transparent 0),
+        radial-gradient(circle at 10px 10px, rgba(255, 0, 255, 0.1) 1px, transparent 0);
+      background-size: 40px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #ffe6f0;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 192, 203, 0.4);
+      max-width: 550px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+      font-weight: bold;
+      background: linear-gradient(to right, #00eaff, #cc66ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 2px #cc66ff;
+      letter-spacing: 1px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 15px;
+      transition: 0.3s ease;
+      background-color: #fff0f5;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #ff66cc;
+      outline: none;
+      box-shadow: 0 0 6px rgba(255, 105, 180, 0.5);
+    }
+
+    .gender-options {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+
+    .gender-options label {
+      font-weight: normal;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      transform: scale(1.1);
+      margin-right: 6px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background: linear-gradient(to right, #ff66cc, #ff99cc);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.4s ease;
+      box-shadow: 0 0 10px #ff66cc;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #ff99cc, #ff66cc);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px #ff66cc, 0 0 25px #ff99cc;
+    }
+
+    @media (max-width: 480px) {
+      .gender-options {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Hospital Registration Form</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="fullName">Patient Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 1234567890" required />
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+      </div>
+
+      <div class="form-group">
+        <label>Gender:</label>
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="male" required /> Male</label>
+          <label><input type="radio" name="gender" value="female" /> Female</label>
+          <label><input type="radio" name="gender" value="other" /> Other</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+          <option value="">--Select Department--</option>
+          <option value="General Medicine">General Medicine</option>
+          <option value="Cardiology">Cardiology</option>
+          <option value="Orthopedics">Orthopedics</option>
+          <option value="Gynecology">Gynecology</option>
+          <option value="Pediatrics">Pediatrics</option>
+          <option value="ENT">ENT</option>
+          <option value="Neurology">Neurology</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="symptoms">Describe Symptoms:</label>
+        <textarea id="symptoms" name="symptoms" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label><input type="checkbox" name="terms" required /> I confirm the information provided is accurate.</label>
+      </div>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+</body>
+</html>

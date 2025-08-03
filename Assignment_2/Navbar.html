@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Navigation Bar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #1A237E 0%, #283593 100%);
+            padding: 1.2rem 3rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FFECB3; 
+            letter-spacing: 1px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 2.5rem;
+        }
+
+        .navbar .nav-links a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #E3F2FD; 
+            position: relative;
+            padding-bottom: 5px; 
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: #FDD835; 
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #FDD835; 
+        }
+
+        .navbar .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 2rem;
+            }
+            
+            .navbar .logo {
+                margin-bottom: 1rem;
+            }
+
+            .navbar .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar .nav-links li {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .navbar .nav-links a {
+                display: block;
+                padding: 0.8rem 0;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.1); 
+            }
+
+            .navbar .nav-links a:hover {
+                background-color: #FDD835;
+                color: #1A237E;
+            }
+            
+            .navbar .nav-links a::after {
+                display: none; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">Rahma Naqui</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div style="padding: 2rem; text-align: center; color: #333;">
+       
+    </div>
+
+</body>
+</html>
